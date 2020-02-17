@@ -2,7 +2,9 @@
 
 ---
 
-[Remove Nth Node From End of List](remove-nth-node-from-end-of-list.cpp)
+| # | Title | Solution | Difficulty |
+|---| ----- | -------- | ---------- |
+|19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [C++](Algorithms/remove-nth-node-from-end-of-list.cpp)|Medium|
 
 ---
 
