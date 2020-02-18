@@ -14,4 +14,4 @@
 |234|[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [C++](Algorithms/palindrome-linked-list.cpp)|Easy|
 |24|[Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | [C++](Algorithms/swap-nodes-in-pairs.cpp)|Medium|
 |25|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | [C++](Algorithms/reverse-nodes-in-k-group.cpp)|Hard|
-
+|83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [C++](Algorithms/remove-duplicates-from-sorted-list.cpp)|Easy|
