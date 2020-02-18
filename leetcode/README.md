@@ -12,5 +12,6 @@
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [C++](Algorithms/merge-two-sorted-lists.cpp)|Easy|
 |160|[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [C++](Algorithms/intersection-of-two-linked-lists.cpp)|Easy|
 |234|[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [C++](Algorithms/palindrome-linked-list.cpp)|Easy|
-
+|24|[Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | [C++](Algorithms/swap-nodes-in-pairs.cpp)|Medium|
+|25|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | [C++](Algorithms/reverse-nodes-in-k-group.cpp)|Hard|
 
