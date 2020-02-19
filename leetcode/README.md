@@ -16,5 +16,5 @@
 |25|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | [C++](Algorithms/reverse-nodes-in-k-group.cpp)|Hard|
 |83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [C++](Algorithms/remove-duplicates-from-sorted-list.cpp)|Easy|
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [C++](Algorithms/merge-k-sorted-lists.cp)|Hard|
-|91|[Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | [C++](Algorithms/reverse-linked-list-ii.cpp)|Medium|
+|92|[Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | [C++](Algorithms/reverse-linked-list-ii.cpp)|Medium|
 |61|[Rotate List](https://leetcode.com/problems/rotate-list/) | [C++](Algorithms/rotate-list.cpp)|Medium|
