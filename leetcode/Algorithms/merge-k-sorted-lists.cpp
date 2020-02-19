@@ -32,7 +32,6 @@ class Solution {
         }
     public:
         ListNode* mergeKLists(vector<ListNode*> &lists) {
-            ListNode *head = nullptr, *last = nullptr;
             int total_nodes = 0;
             for (auto it = lists.begin(); it != lists.end(); ++it) {
                 total_nodes += getListLength(*it);
