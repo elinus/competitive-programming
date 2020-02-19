@@ -6,11 +6,6 @@ struct ListNode {
     ListNode(int x): val(x), next(nullptr) {} 
 };
 
-class Solution {
-    public:
-        /* Code */
-};
-
 void print(ListNode* head) {
     ListNode *curr = head;
     while (curr) {
@@ -20,6 +15,12 @@ void print(ListNode* head) {
     std::cout << "\n";
 }
 
+
+class Solution {
+    public:
+        /* Code */
+};
+
 int main (int argc, char *argv[]) {
     
     ListNode *head = new ListNode(1);
@@ -27,7 +28,8 @@ int main (int argc, char *argv[]) {
     head->next->next = new ListNode(3);
     head->next->next->next = new ListNode(4);
     head->next->next->next->next = new ListNode(5);
-    
+    print(head);
+
     Solution sol;
     /* Code */
 
