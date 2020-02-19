@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unordered_set>
 
 struct ListNode {
     int val;
@@ -12,18 +11,22 @@ class Solution {
         ListNode* deleteDuplicates(ListNode *head) {
             if (!head) return nullptr;
             ListNode *curr = head, *prev = nullptr;
-            std::unordered_set<int> hs;
-            while (curr) {
-                prev = curr;
-                curr = curr->next;
-                if (curr != nullptr && curr->val == prev->val) {
-                    while (curr != nullptr && curr->val == prev->val) {
-                        ListNode* temp = curr;
-                        curr = curr->next;
-                        delete temp;
+            while (curr && curr->next) {
+                bool flag = false;
+                while (curr && curr->next && curr->val == curr->next->val) {
+                    curr = curr->next;
+                    flag = true;
+                }
+                if (flag) {
+                    if (!prev) {
+                        head = curr->next;
+                    } else {
+                        prev->next = curr->next;
                     }
-                    delete prev;
-                    prev = nullptr;
+                    curr = curr->next;
+                } else {
+                    prev = curr;
+                    curr = curr->next;
                 }
             }
             return head;
@@ -50,7 +53,6 @@ int main (int argc, char *argv[]) {
 
     Solution sol;
     print(sol.deleteDuplicates(head));
-    
 
     return 0;
 }
