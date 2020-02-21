@@ -27,4 +27,5 @@
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | [C++](Algorithms/odd-even-linked-list.cpp)|Medium|
 |143|[Reorder List](https://leetcode.com/problems/reorder-list/) | [C++](Algorithms/reorder-list.cpp)|Medium|
 |445|[Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) | [C++](Algorithms/add-two-numbers-ii.cpp)|Medium|
+|725|[Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/) | [C++](Algorithms/split-linked-list-in-parts.cpp)|Medium|
 
