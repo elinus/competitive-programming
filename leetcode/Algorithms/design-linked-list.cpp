@@ -21,11 +21,9 @@ class MyLinkedList {
 
         /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
         int get(int index) {
-            if (!head || index < 0 || index > length) return -1;
-            if (index == 0) return head->data;
-            else if (index == length-1) return last->data;
+            if (!head || index < 0 || index >= length) return -1;
             Node *curr = head;
-            while (curr && index--) {
+            while (index--) {
                 curr = curr->next;
             }
             if (curr) return curr->data;
@@ -36,12 +34,10 @@ class MyLinkedList {
         void addAtHead(int val) {
             Node *nn = new Node(val);
             if (!head) {
-                head = nn;
-                last = head;
-            } else {
-                nn->next = head;
-                head = nn;
+                last = nn;
             }
+            nn->next = head;
+            head = nn;
             length++;
         }
 
@@ -49,12 +45,12 @@ class MyLinkedList {
         void addAtTail(int val) {
             Node *nn = new Node(val);
             if (!last) {
+                nn->next = head;
                 head = nn;
-                last = head;
             } else {
                 last->next = nn;
-                last = nn;
             }
+            last = nn;
             length++;
         }
         
@@ -67,59 +63,44 @@ class MyLinkedList {
             } else if (index == length) {
                 addAtTail(val);
                 return;
+            } else {
+                Node *nn = new Node(val);
+                Node *curr = head, *prev = nullptr;
+                while (index--) {
+                    prev = curr;
+                    curr = curr->next;
+                }
+                if (prev) prev->next = nn;
+                nn->next = curr;
+                length++;
             }
-            Node *nn = new Node(val);
-            Node *curr = head, *prev = nullptr;
-            while (curr && index--) {
-                prev = curr;
-                curr = curr->next;
-            }
-            if (prev) prev->next = nn;
-            nn->next = curr;
-		    length++;
         }
 
         /** Delete the index-th node in the linked list, if the index is valid. */
         void deleteAtIndex(int index) {
-            if (index < 0 || index > length) return;
+            if (index < 0 || index >= length) return;
             if (index == 0) {
                 if (length == 1) {
                     head = nullptr;
                     last = nullptr;
                 } else {
-                    Node *curr = head;
                     head = head->next;
-                    delete curr;
                 }
-                length--;
-                return;
-            }
-            if (index == length) {
-                Node *curr = head;
-                while(curr && curr->next != last) {
+            } else {
+                Node *curr = head, *prev = nullptr;
+                while (index--) {
+                    prev = curr;
                     curr = curr->next;
                 }
-                if (curr) {
-                    Node *temp = last;
-                    last = curr;
-                    last->next = nullptr;
-                    delete temp;
+                if (curr == last) {
+                    prev->next = nullptr;
+                    last = prev;
+                } else if (curr->next) {
+                    prev->next = curr->next;
                 }
-                length--;
-                return;
             }
-            Node *curr = head;
-            while (curr && --index) {
-                curr = curr->next;
-            }
-            Node *temp = curr->next;
-            if (curr->next->next) curr->next = curr->next->next;
-            else curr->next = nullptr;
-            delete temp;
             length--;
         }
-
-        /* HELPER FUNCTIONS */
 
         void print() {
             Node *curr = head;
@@ -133,28 +114,34 @@ class MyLinkedList {
 
 int main (int argc, char *argv[]) {
     MyLinkedList* obj = new MyLinkedList();
-    obj->print();
     obj->addAtHead(1);
+    obj->addAtHead(2);
+    obj->addAtHead(3);
+    obj->addAtHead(4);
+    obj->addAtHead(5);
+    obj->print();
+    obj->addAtTail(1);
+    obj->addAtTail(2);
     obj->addAtTail(3);
+    obj->addAtTail(4);
+    obj->addAtTail(5);
     obj->print();
-    obj->addAtIndex(1, 2);
+    obj->deleteAtIndex(10);
     obj->print();
-    //std::cout << obj->get(0) << "\n";
-    //std::cout << obj->get(10) << "\n";
-    std::cout << obj->get(1) << "\n";
-    std::cout << "---\n";
-    obj->deleteAtIndex(1);
+    obj->deleteAtIndex(0);
     obj->print();
+    obj->deleteAtIndex(7);
+    obj->print();
+
+/*    obj->addAtIndex(5, 0);
+    obj->addAtIndex(0, 6);
+    obj->addAtIndex(12, 7);
+    obj->addAtIndex(12, 6);
+    obj->print();*/
+    std::cout << "# " << obj->get(0) << "\n";
+    std::cout << "# " << obj->get(12) << "\n";
+    std::cout << "# " << obj->get(-1) << "\n";
+    std::cout << "# " << obj->get(14) << "\n";
+    std::cout << "# " << obj->get(5) << "\n";
     return 0;
 }
-
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * MyLinkedList* obj = new MyLinkedList();
- * int param_1 = obj->get(index);
- * obj->addAtHead(val);
- * obj->addAtTail(val);
- * obj->addAtIndex(index,val);
- * obj->deleteAtIndex(index);
- */

@@ -28,4 +28,6 @@
 |143|[Reorder List](https://leetcode.com/problems/reorder-list/) | [C++](Algorithms/reorder-list.cpp)|Medium|
 |445|[Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) | [C++](Algorithms/add-two-numbers-ii.cpp)|Medium|
 |725|[Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/) | [C++](Algorithms/split-linked-list-in-parts.cpp)|Medium|
+|707|[Design Linked List](https://leetcode.com/problems/design-linked-list/) | [C++](Algorithms/design-linked-list.cpp)|Medium|
+
 
