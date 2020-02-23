@@ -29,5 +29,8 @@
 |445|[Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) | [C++](Algorithms/add-two-numbers-ii.cpp)|Medium|
 |725|[Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/) | [C++](Algorithms/split-linked-list-in-parts.cpp)|Medium|
 |707|[Design Linked List](https://leetcode.com/problems/design-linked-list/) | [C++](Algorithms/design-linked-list.cpp)|Medium|
+|138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) | [C++](Algorithms/copy-list-with-random-pointer.cpp)|Medium|
+|147|[Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/) | [C++](Algorithms/insertion-sort-list.cpp)|Medium|
+|148|[Sort List](https://leetcode.com/problems/sort-list/) | [C++](Algorithms/sort-list.cpp)|Medium|
 
 
