@@ -1,1 +1,1 @@
-# interviewbit_leetcode_ctci
+# competitive-programming
