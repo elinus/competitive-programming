@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-    void traverse(TreeNode *root, map<int, int> & m) {
+    void traverse(TreeNode *root, unordered_map<int, int> & m) {
         if (root) {
             if (m.find(root->val) != m.end())
                 m[root->val] += 1;
@@ -20,7 +20,7 @@ class Solution {
     }
 public:
     vector<int> findMode(TreeNode* root) {
-        map<int, int> m;
+        unordered_map<int, int> m;
         traverse(root, m);
         int max = INT_MIN;
         for (auto i = m.begin(); i != m.end(); ++i) {
