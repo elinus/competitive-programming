@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int main() {
@@ -7,6 +6,5 @@ int main() {
     cin.tie(0);
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "r", stdout);
-
     return 0;
 }
