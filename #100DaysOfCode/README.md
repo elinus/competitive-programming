@@ -35,7 +35,7 @@ SELECT DISTINCT city FROM station WHERE city RLIKE '^[aeiouAEIOU].*[aeiouAEIOU]$
 SELECT DISTINCT city FROM station WHERE city NOT RLIKE '^[aeiouAEIOU].*[aeiouAEIOU]$';
 SELECT DISTINCT city FROM station WHERE city NOT RLIKE '^[AEIOUaeiou].*$';
 SELECT name FROM students WHERE marks > 75 ORDER BY SUBSTRING(name, -3, 3), id;
-SELECT DISTINCT city FROM station WHERE LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND 		LOWER(SUBSTR(city, LENGTH(city),1)) NOT IN ('a','e','i','o','u');
+SELECT DISTINCT city FROM station WHERE LOWER(SUBSTR(city,1,1)) NOT IN ('a','e','i','o','u') AND LOWER(SUBSTR(city, LENGTH(city),1)) NOT IN ('a','e','i','o','u');
 
 SELECT city, LENGTH(city) FROM station ORDER BY LENGTH(city) ASC, city LIMIT 1; 
 SELECT city, LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city LIMIT 1; 
@@ -43,3 +43,4 @@ SELECT city, LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city LIMIT 1;
 
 * Not using my time efficiently. Need to plan office & home hours properly. 
 ```
+---
