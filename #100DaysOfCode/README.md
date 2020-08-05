@@ -44,3 +44,37 @@ SELECT city, LENGTH(city) FROM station ORDER BY LENGTH(city) DESC, city LIMIT 1;
 * Not using my time efficiently. Need to plan office & home hours properly. 
 ```
 ---
+#### Day-2
+```
+* HACKERRANK :: sql
+SELECT ROUND(SUM(lat_n), 2), ROUND(SUM(long_w), 2) FROM station;
+SELECT ROUND(SUM(lat_n), 4) FROM station where lat_n > 38.7880 AND lat_n < 137.2345;
+SELECT ROUND(MAX(lat_n), 4) FROM station WHERE lat_n < 137.2345;
+SELECT ROUND(long_w, 4) FROM station WHERE lat_n < 137.2345 ORDER BY lat_n DESC LIMIT 1;
+SELECT ROUND(MIN(lat_n), 4) FROM station WHERE lat_n > 38.7780;
+SELECT ROUND(long_w, 4) FROM station WHERE lat_n > 38.7780 ORDER BY lat_n ASC LIMIT 1;
+SELECT ROUND(ABS(MIN(lat_n) - MAX(lat_n)) + ABS(MIN(long_w) - MAX(long_w)), 4) FROM station;
+SELECT ROUND(SQRT(POW(MIN(lat_n) - MAX(lat_n), 2) + POW(MIN(long_w) - MAX(long_w), 2)), 4) FROM station;
+
+SET @rowIndex := -1;
+SELECT ROUND(AVG(a.lat_n), 4) FROM (
+SELECT @rowIndex := @rowIndex+1 AS rowIndex, b.lat_n FROM STATION AS b ORDER BY b.lat_n
+) AS a WHERE a.rowIndex IN (FLOOR(@rowIndex / 2), CEIL(@rowIndex / 2));
+
+	
+SELECT 
+	IF(a+b>c AND a+c>b AND b+c>a, 
+		IF(a=b AND b=c, 'Equilateral', 
+		IF(a=b OR b=c OR a=c, 'Isosceles', 'Scalene')), 'Not A Triangle') 
+	FROM triangles;
+	
+SELECT COUNT(population) FROM city WHERE population > 100000;
+SELECT SUM(population) FROM city WHERE district = 'California';
+SELECT AVG(population) FROM city WHERE district = 'California';
+SELECT SUM(population) FROM city WHERE countrycode = 'JPN';
+SELECT MAX(population) - MIN(population) FROM city;
+---
+* Not using my time efficiently. Need to plan office & home hours properly. 
+---
+```
+---
