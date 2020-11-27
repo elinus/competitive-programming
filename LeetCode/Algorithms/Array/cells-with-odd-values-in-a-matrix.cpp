@@ -8,7 +8,26 @@ template <typename T> void print(const vector<T> &v) {
 
 class Solution {
 public:
-  /* Code */
+  int oddCells(int n, int m, vector<vector<int>> &indices) {
+    vector<vector<int>> matx(n, vector<int>(m, 0));
+    for (int i = 0; i < indices.size(); i++) {
+      int row = indices[i][0], col = indices[i][1];
+      for (int ri = 0; ri < n; ri++) {
+        matx[ri][col] += 1;
+      }
+      for (int ci = 0; ci < m; ci++) {
+        matx[row][ci] += 1;
+      }
+    }
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        if (matx[i][j] % 2)
+          count++;
+      }
+    }
+    return count;
+  }
 };
 
 int main() {
@@ -20,7 +39,9 @@ int main() {
   // freopen("output.txt", "r", stdout);
 
   Solution soln;
-  /* Code */
+  int n1 = 2, m1 = 3;
+  vector<vector<int>> indices1 = {{0, 1}, {1, 1}};
+  cout << soln.oddCells(n1, m1, indices1) << "\n";
 
   end = chrono::high_resolution_clock::now();
   const chrono::duration<double> elapsedTime = end - start;
