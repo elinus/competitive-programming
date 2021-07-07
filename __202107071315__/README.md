@@ -1,2 +1,3 @@
 # competitive-programming
-- archived code
+
+archived competitive-programming code
