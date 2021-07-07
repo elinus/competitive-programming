@@ -1,3 +1,11 @@
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
 vector<int> twoSum(const vector<int> &A, int B) {
   vector<int> ans;
   unordered_map<int, int> ht;
