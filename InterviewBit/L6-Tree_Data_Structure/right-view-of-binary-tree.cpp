@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 #include <queue>
 #include <stack>
 #include <vector>
@@ -13,19 +14,20 @@ struct TreeNode {
 };
 
 vector<int> solve(TreeNode *A) {
-  vector<int> ans;
   if (!A)
-    return ans;
-  stack<vector<int>> st;
+    return {};
+
+  map<int, int> ht;
   queue<TreeNode *> q;
+  int level = 0;
   q.push(A);
   q.push(nullptr);
-  vector<int> v;
+
   while (!q.empty()) {
     TreeNode *node = q.front();
     q.pop();
     if (node) {
-      v.push_back(node->val);
+      ht[level] = node->val;
       if (node->left)
         q.push(node->left);
       if (node->right)
@@ -33,15 +35,13 @@ vector<int> solve(TreeNode *A) {
     } else {
       if (!q.empty())
         q.push(nullptr);
-      st.push(move(v));
+      level++;
     }
   }
-  while (!st.empty()) {
-    auto var = st.top();
-    st.pop();
-    for (auto it = var.begin(); it != var.end(); ++it) {
-      ans.push_back(*it);
-    }
+
+  vector<int> res;
+  for (auto it = ht.begin(); it != ht.end(); ++it) {
+    res.push_back(it->second);
   }
-  return ans;
+  return res;
 }

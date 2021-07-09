@@ -1,6 +1,8 @@
 #include <iostream>
+#include <map>
 #include <queue>
 #include <stack>
+#include <utility>
 #include <vector>
 
 using namespace std;
@@ -12,20 +14,18 @@ struct TreeNode {
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-vector<int> solve(TreeNode *A) {
-  vector<int> ans;
+int solve(TreeNode *A) {
   if (!A)
-    return ans;
-  stack<vector<int>> st;
+    return 0;
+  int max_sum = 0, sum = 0;
   queue<TreeNode *> q;
   q.push(A);
   q.push(nullptr);
-  vector<int> v;
   while (!q.empty()) {
     TreeNode *node = q.front();
     q.pop();
     if (node) {
-      v.push_back(node->val);
+      sum += node->val;
       if (node->left)
         q.push(node->left);
       if (node->right)
@@ -33,15 +33,9 @@ vector<int> solve(TreeNode *A) {
     } else {
       if (!q.empty())
         q.push(nullptr);
-      st.push(move(v));
+      max_sum = max(max_sum, sum);
+      sum = 0;
     }
   }
-  while (!st.empty()) {
-    auto var = st.top();
-    st.pop();
-    for (auto it = var.begin(); it != var.end(); ++it) {
-      ans.push_back(*it);
-    }
-  }
-  return ans;
+  return max_sum;
 }
